@@ -1,0 +1,25 @@
+{
+  "name": "letterimages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "letterimages.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieljoos/letterimages.git"
+  },
+  "author": "Daniel Joos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danieljoos/letterimages/issues"
+  },
+  "homepage": "https://github.com/danieljoos/letterimages#readme",
+  "devDependencies": {
+    "event-stream": "^3.3.4",
+    "gulp": "^3.9.1",
+    "gulp-data": "^1.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-svgo": "^1.0.3",
+    "gulp-template": "^4.0.0",
+    "stream-reduce": "^1.0.3"
+  }
+}

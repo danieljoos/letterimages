@@ -1,0 +1,68 @@
+; (function (root, factory) {
+    /* global define */
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        module.exports = factory(require('jquery'));
+    } else {
+        /* global jQuery */
+        factory(jQuery);
+    }
+} ((typeof window !== 'undefined') ? window : this, function ($) {
+
+    'use strict';
+
+    var themes = [
+        ['#01579b', '#81d4fa', '#2979ff']
+    ];
+
+    var glyphs = {
+        /* jscs:disable */
+        /* jshint ignore:start */
+        
+        <% Object.keys(svgs).forEach((k) => { %><%= k %>: '<%= svgs[k] %>',
+        <% }); %>
+        /* jshint ignore:end */
+        /* jscs:enable */
+    };
+
+    function LetterImages(options) {
+        this.options = $.extend({
+            themes: themes,
+            themeResolver: resolveTheme,
+            glyphResolver: resolveGlyph
+        }, options);
+    }
+
+    LetterImages.prototype.imageSource = function (element) {
+        element = $(element);
+        var config = $.extend({ name: '?' }, element.data());
+        var svg = $(resolveGlyph(config.name, glyphs));
+        var style = $('<style>').text(resolveTheme(config.name, this.options.themes)
+            .map(function (val, i) { return '.color' + (i + 1) + ' {fill: ' + val + ';}'; })
+            .join('\n'));
+        svg.append(style);
+        var data = svg.wrap('<p>').parent().html();
+        element.attr('src', 'data:image/svg+xml;base64,' + btoa(data));
+    }
+
+    function resolveGlyph(name, glyphs) {
+        var k = name.slice(0, 1).toLowerCase();
+        return (k in glyphs) ? glyphs[k] : glyphs.default;
+    }
+
+    function resolveTheme(name, themes) {
+        var hash = 5381;
+        for (var i = 0; i < name.length; ++i) {
+            hash = ((hash << 5) + hash) + name.charCodeAt(i);
+        }
+        return themes[hash % themes.length];
+    }
+
+    $.fn.letterimages = function (options) {
+        var l = new LetterImages(options);
+        this.each(function () { l.imageSource(this); });
+    };
+
+    return LetterImages;
+}));
