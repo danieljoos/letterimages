@@ -2,7 +2,7 @@
   "name": "letterimages",
   "version": "1.0.0",
   "description": "",
-  "main": "letterimages.js",
+  "main": "dist/letterimages.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danieljoos/letterimages.git"
@@ -20,6 +20,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-svgo": "^1.0.3",
     "gulp-template": "^4.0.0",
+    "gulp-uglify": "^2.0.0",
     "stream-reduce": "^1.0.3"
   }
 }

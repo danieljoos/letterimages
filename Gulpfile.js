@@ -10,8 +10,9 @@ const reduce = require('stream-reduce');
 const rename = require('gulp-rename');
 const svgo = require('gulp-svgo');
 const template = require('gulp-template');
+const uglify = require('gulp-uglify');
 
-gulp.task('default', () =>
+gulp.task('letterimages.js', () =>
     gulp.src('letterimages.js.tmpl')
         .pipe(data((f, cb) => {
             gulp.src('svg/*.svg')
@@ -28,3 +29,12 @@ gulp.task('default', () =>
         .pipe(rename('letterimages.js'))
         .pipe(gulp.dest('dist'))
 );
+
+gulp.task('letterimages.min.js', ['letterimages.js'], () =>
+    gulp.src('dist/letterimages.js')
+        .pipe(uglify())
+        .pipe(rename('letterimages.min.js'))
+        .pipe(gulp.dest('dist'))
+);
+
+gulp.task('default', ['letterimages.js', 'letterimages.min.js']);
