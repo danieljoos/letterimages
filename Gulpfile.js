@@ -5,6 +5,8 @@
 const data = require('gulp-data');
 const es = require('event-stream');
 const gulp = require('gulp');
+const jscs = require('gulp-jscs');
+const jshint = require('gulp-jshint');
 const path = require('path');
 const reduce = require('stream-reduce');
 const rename = require('gulp-rename');
@@ -26,6 +28,8 @@ gulp.task('letterimages.js', () =>
                 .on('data', (d) => cb(undefined, d));
         }))
         .pipe(template())
+        .pipe(jscs())
+        .pipe(jshint())
         .pipe(rename('letterimages.js'))
         .pipe(gulp.dest('dist'))
 );
