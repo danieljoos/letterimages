@@ -24,6 +24,7 @@
     "gulp-template": "^4.0.0",
     "gulp-uglify": "^2.0.0",
     "jshint": "^2.9.4",
+    "material-colors": "^1.2.3",
     "stream-reduce": "^1.0.3"
   }
 }

@@ -12,14 +12,19 @@
 
     'use strict';
 
+    // The default color themes. Inspired by OxygenOS's contact app.
     var themes = [
-        ['#01579b', '#81d4fa', '#2979ff']
+        ['<%= colors["teal"]["700"]       %>', '<%= colors["teal"]["500"]       %>', '<%= colors["green"]["200"]     %>', '<%= colors["teal"]["800"]       %>'],  // Teal
+        ['<%= colors["blue"]["800"]       %>', '<%= colors["blue"]["600"]       %>', '<%= colors["lightBlue"]["200"] %>', '<%= colors["blue"]["900"]       %>'],  // Blue
+        ['<%= colors["deepPurple"]["500"] %>', '<%= colors["deepPurple"]["300"] %>', '<%= colors["purple"]["200"]    %>', '<%= colors["deepPurple"]["600"] %>'],  // Purple
+        ['<%= colors["orange"]["800"]     %>', '<%= colors["orange"]["400"]     %>', '<%= colors["yellow"]["200"]    %>', '<%= colors["yellow"]["600"]     %>'],  // Orange
+        ['<%= colors["blueGrey"]["400"]   %>', '<%= colors["blueGrey"]["200"]   %>', '<%= colors["blue"]["50"]       %>', '<%= colors["blueGrey"]["500"]   %>']   // Grey
     ];
 
     var glyphs = {
         /* jscs:disable */
         /* jshint ignore:start */
-        
+
         <% Object.keys(svgs).forEach((k) => { %><%= k %>: '<%= svgs[k] %>',
         <% }); %>
         /* jshint ignore:end */
@@ -56,7 +61,7 @@
         for (var i = 0; i < name.length; ++i) {
             hash = ((hash << 5) + hash) + name.charCodeAt(i);
         }
-        return themes[hash % themes.length];
+        return themes[Math.abs(hash) % themes.length];
     }
 
     $.fn.letterimages = function (options) {

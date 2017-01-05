@@ -7,6 +7,7 @@ const es = require('event-stream');
 const gulp = require('gulp');
 const jscs = require('gulp-jscs');
 const jshint = require('gulp-jshint');
+const material = require('material-colors');
 const path = require('path');
 const reduce = require('stream-reduce');
 const rename = require('gulp-rename');
@@ -24,7 +25,7 @@ gulp.task('letterimages.js', () =>
                     const v = file.contents;
                     d.svgs[k] = v;
                     return d;
-                }, { svgs: {} }))
+                }, { svgs: {}, colors: material }))
                 .on('data', (d) => cb(undefined, d));
         }))
         .pipe(template())
