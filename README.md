@@ -56,7 +56,7 @@ $('img.profile').letterimages({
 ```js
 $('img.profile').letterimages({
     glyphResolver: function(name, glyphs) {
-        return glyphs(name[0].toLowerCase());  // Use your own logic here
+        return glyphs[name[0].toLowerCase()];  // Use your own logic here
     }
 });
 ```
