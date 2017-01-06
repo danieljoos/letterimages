@@ -1,0 +1,20 @@
+{
+  "name": "letterimages",
+  "description": "Generate profile images, e.g. for profiles without photo",
+  "main": "dist/letterimages.js",
+  "authors": [
+    "Daniel Joos"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/danieljoos/letterimages",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery": "^3.1.1"
+  }
+}
