@@ -2,8 +2,8 @@
 
 Generate profile images, e.g. for profiles without photo.
 
-Heavily inspired by the _Contacts_ app of [OxygenOS 4.0](https://oneplus.net/oxygenos).
-Similar to [initial.js](http://judelicio.us/initial.js/).
+Similar to [initial.js](http://judelicio.us/initial.js/) and heavily inspired by
+the _Contacts_ app of [OxygenOS 4.0](https://oneplus.net/oxygenos).
 
 ## Usage
 
@@ -35,7 +35,7 @@ Using bower:
 bower install letterimages
 ```
 
-## Customizations
+## Options
 
 ### Custom color themes
 
