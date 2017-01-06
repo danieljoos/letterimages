@@ -5,6 +5,8 @@ Generate profile images, e.g. for profiles without photo.
 Similar to [initial.js](http://judelicio.us/initial.js/) and heavily inspired by
 the _Contacts_ app of [OxygenOS 4.0](https://oneplus.net/oxygenos).
 
+Have a look at the [demo page](https://danieljoos.github.io/letterimages/dist/demo.html) to see it in action.
+
 ## Usage
 
 _letterimages_ requires _jQuery_ and registers itself as jQuery plugin.
@@ -21,7 +23,7 @@ During initialization of your page, apply the jQuery plugin to those `img` tags:
 ```
 
 The plugin only injects the image source. The actual style (size, rounded, etc.)
-need to be set from outside, e.g. using _Bootstrap_'s image classes (see Demo page).
+need to be set from outside, e.g. using _Bootstrap_'s image classes (see [demo page](https://danieljoos.github.io/letterimages/dist/demo.html)).
 
 ## Installation
 
