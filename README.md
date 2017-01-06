@@ -1,4 +1,4 @@
-# letterimages
+# letterimages [![npm version](https://badge.fury.io/js/letterimages.svg)](https://badge.fury.io/js/letterimages)
 
 Generate profile images, e.g. for profiles without photo.
 
