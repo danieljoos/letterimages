@@ -42,4 +42,17 @@ gulp.task('letterimages.min.js', ['letterimages.js'], () =>
         .pipe(gulp.dest('dist'))
 );
 
-gulp.task('default', ['letterimages.js', 'letterimages.min.js']);
+gulp.task('demo.html', ['letterimages.min.js'], () =>
+    gulp.src('demo.html.tmpl')
+        .pipe(template({
+            names: [
+                'John Doe', 'Tommy Atkins', 'Max Mustermann', 'John Smith',
+                'Numerius Negidius', 'Ola Nordmann', 'Yogi Bear',
+                'Ivan Petrovich Sidorov', 'Sven Svensson', 'Zhang San',
+                'Anna Malli', 'Rajwinder Kaur',]
+        }))
+        .pipe(rename('demo.html'))
+        .pipe(gulp.dest('dist'))
+);
+
+gulp.task('default', ['letterimages.js', 'letterimages.min.js', 'demo.html']);
