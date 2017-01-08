@@ -55,7 +55,7 @@
             .map(function (val, i) { return '.color' + (i + 1) + ' {fill: ' + val + ';}'; })
             .join('\n'));
         svg.append(style);
-        var data = svg.wrap('<p>').parent().html();
+        var data = svg.prop('outerHTML');
         element.attr('src', 'data:image/svg+xml;base64,' + btoa(data));
     }
 
