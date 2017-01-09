@@ -2,12 +2,15 @@
 
 Generate profile images, e.g. for profiles without photo.
 
-Similar to [initial.js](http://judelicio.us/initial.js/) and heavily inspired by
+It can either be used as jQuery Plugin with JavaScript or as CSS-only stylesheet.
+
+Have a look at the [Demo page (jQuery Plugin)](https://danieljoos.github.io/letterimages/dist/demo.html) 
+and the [Demo page (CSS-only)](https://danieljoos.github.io/letterimages/dist/demo-css.html) to see it in action.
+
+It is very similar to [initial.js](http://judelicio.us/initial.js/) and heavily inspired by
 the _Contacts_ app of [OxygenOS 4.0](https://oneplus.net/oxygenos).
 
-Have a look at the [demo page](https://danieljoos.github.io/letterimages/dist/demo.html) to see it in action.
-
-## Usage
+## Usage (jQuery Plugin)
 
 _letterimages_ requires _jQuery_ and registers itself as jQuery plugin.
 It looks for the `name` data attribute on elements it gets applied to.
@@ -23,7 +26,23 @@ During initialization of your page, apply the jQuery plugin to those `img` tags:
 ```
 
 The plugin only injects the image source. The actual style (size, rounded, etc.)
-need to be set from outside, e.g. using _Bootstrap_'s image classes (see [demo page](https://danieljoos.github.io/letterimages/dist/demo.html)).
+need to be set from outside, e.g. using _Bootstrap_'s image classes (see [Demo page (jQuery Plugin)](https://danieljoos.github.io/letterimages/dist/demo.html)).
+
+## Usage (CSS-only)
+
+First, include the stylesheet using a `link` tag:
+```html
+    <link href="/path/to/letterimages.css" rel="stylesheet">
+```
+
+Similar to the description above you then simply need to add the desired name as `data-name` attribute.
+In addition, add the CSS class `letterimages-profile`:
+```html
+    <img data-name="John Doe" class="letterimages-profile">
+```
+
+The stylesheet uses some default coloring for each letter.
+Customize the style using utility classes as shown on the [Demo page (CSS-only)](https://danieljoos.github.io/letterimages/dist/demo-css.html)
 
 ## Installation
 
@@ -37,7 +56,7 @@ Using bower:
 bower install letterimages
 ```
 
-## Options
+## Options (jQuery Plugin)
 
 ### Custom color themes
 
