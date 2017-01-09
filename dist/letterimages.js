@@ -75,14 +75,18 @@
     LetterImages.prototype.imageSource = function (element) {
         element = $(element);
         var config = $.extend({ name: '?' }, element.data());
+        var svg = this.svg(config);
+        element.attr('src', 'data:image/svg+xml;base64,' + btoa(svg));
+    };
+
+    LetterImages.prototype.svg = function (config) {
         var svg = $(resolveGlyph(config.name, glyphs));
         var style = $('<style>').text(resolveTheme(config.name, this.options.themes)
             .map(function (val, i) { return '.color' + (i + 1) + ' {fill: ' + val + ';}'; })
             .join('\n'));
         svg.append(style);
-        var data = svg.wrap('<p>').parent().html();
-        element.attr('src', 'data:image/svg+xml;base64,' + btoa(data));
-    }
+        return svg.prop('outerHTML');
+    };
 
     function resolveGlyph(name, glyphs) {
         var k = name.slice(0, 1).toLowerCase();
