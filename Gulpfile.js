@@ -30,7 +30,9 @@ gulp.task('letterimages.js', () =>
         }))
         .pipe(template())
         .pipe(jscs())
+        .pipe(jscs.reporter())
         .pipe(jshint())
+        .pipe(jshint.reporter())
         .pipe(rename('letterimages.js'))
         .pipe(gulp.dest('dist'))
 );
