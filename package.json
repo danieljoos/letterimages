@@ -14,9 +14,10 @@
   },
   "homepage": "https://github.com/danieljoos/letterimages#readme",
   "devDependencies": {
+    "cheerio": "^0.22.0",
     "event-stream": "^3.3.4",
     "gulp": "^3.9.1",
-    "gulp-data": "^1.2.1",
+    "gulp-cssmin": "^0.1.7",
     "gulp-jscs": "^4.0.0",
     "gulp-jshint": "^2.0.4",
     "gulp-rename": "^1.2.2",
@@ -24,6 +25,7 @@
     "gulp-template": "^4.0.0",
     "gulp-uglify": "^2.0.0",
     "jshint": "^2.9.4",
+    "lodash": "^4.17.4",
     "material-colors": "^1.2.3",
     "stream-reduce": "^1.0.3"
   }

@@ -1,0 +1,45 @@
+
+
+.letterimages-profile {
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-size: 48px 48px;
+}
+
+.letterimages-rounded {
+    border-radius: 6px;
+}
+
+.letterimages-circle {
+    border-radius: 50%;
+}
+<% [32, 48, 64, 72, 128].forEach((r) => { %>
+.letterimages-<%= r %> {
+    width: <%= r %>px;
+    height: <%= r %>px;
+    background-size: <%= r %>px <%= r %>px;
+}
+<% });
+
+const themes = {
+    teal:   [colors["teal"]["700"]      , colors["teal"]["500"]      , colors["green"]["200"]    , colors["teal"]["800"]      ],
+    blue:   [colors["blue"]["800"]      , colors["blue"]["600"]      , colors["lightBlue"]["200"], colors["blue"]["900"]      ],
+    purple: [colors["deepPurple"]["500"], colors["deepPurple"]["300"], colors["purple"]["200"]   , colors["deepPurple"]["600"]],
+    orange: [colors["orange"]["800"]    , colors["orange"]["400"]    , colors["yellow"]["200"]   , colors["yellow"]["600"]    ],
+    grey:   [colors["blueGrey"]["400"]  , colors["blueGrey"]["200"]  , colors["blue"]["50"]      , colors["blueGrey"]["500"]  ]
+};
+var themes_order = Object.keys(themes);
+
+Object.keys(svgs).forEach((k) => { themes_order.forEach((theme, ti) => {
+    var $ = cheerio.load(svgs[k]);
+    themes[theme].forEach((color, i) => $('.color' + (i+1)).attr('fill', color));
+    var svg = $.xml();
+%>
+.letterimages-profile[data-name^="<% print(k.toLowerCase()); %>"].letterimages-<%=theme %>, .letterimages-profile[data-name^="<% print(k.toUpperCase()); %>"].letterimages-<%=theme %><% if (ti === 0) {%>, .letterimages-profile[data-name^="<% print(k.toLowerCase()); %>"], .letterimages-profile[data-name^="<% print(k.toUpperCase()); %>"]<%} %> {
+    background-image: url("data:image/svg+xml;base64,<% print(new Buffer(svg).toString('base64')); %>");
+}
+<% });
+   themes_order.unshift(themes_order.pop());
+}); %>
