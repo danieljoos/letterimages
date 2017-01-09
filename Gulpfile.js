@@ -17,6 +17,13 @@ const svgo = require('gulp-svgo');
 const template = require('gulp-template');
 const uglify = require('gulp-uglify');
 
+const demoData = {
+    names: [
+        'John Doe', 'Tommy Atkins', 'Max Mustermann', 'John Smith',
+        'Numerius Negidius', 'Ola Nordmann', 'Yogi Bear',
+        'Ivan Petrovich Sidorov', 'Sven Svensson', 'Zhang San',
+        'Anna Malli', 'Rajwinder Kaur',]
+};
 let templateData = { svgs: {}, colors: material };
 
 gulp.task('templateData', () =>
@@ -51,7 +58,7 @@ gulp.task('letterimages.min.js', ['letterimages.js'], () =>
 
 gulp.task('letterimages.css', ['templateData'], () =>
     gulp.src('letterimages.css.tmpl')
-        .pipe(template(templateData, {imports: { _: lodash, cheerio: cheerio}}))
+        .pipe(template(templateData, { imports: { _: lodash, cheerio: cheerio } }))
         .pipe(rename('letterimages.css'))
         .pipe(gulp.dest('dist'))
 );
@@ -65,18 +72,19 @@ gulp.task('letterimages.min.css', ['letterimages.css'], () =>
 
 gulp.task('demo.html', ['letterimages.min.js'], () =>
     gulp.src('demo.html.tmpl')
-        .pipe(template({
-            names: [
-                'John Doe', 'Tommy Atkins', 'Max Mustermann', 'John Smith',
-                'Numerius Negidius', 'Ola Nordmann', 'Yogi Bear',
-                'Ivan Petrovich Sidorov', 'Sven Svensson', 'Zhang San',
-                'Anna Malli', 'Rajwinder Kaur',]
-        }))
+        .pipe(template(demoData))
         .pipe(rename('demo.html'))
+        .pipe(gulp.dest('dist'))
+);
+
+gulp.task('demo-css.html', ['letterimages.min.css'], () =>
+    gulp.src('demo-css.html.tmpl')
+        .pipe(template(demoData))
+        .pipe(rename('demo-css.html'))
         .pipe(gulp.dest('dist'))
 );
 
 gulp.task('default', [
     'letterimages.js', 'letterimages.min.js',
     'letterimages.css', 'letterimages.min.css',
-    'demo.html']);
+    'demo.html', 'demo-css.html']);
