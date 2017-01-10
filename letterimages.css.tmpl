@@ -64,16 +64,16 @@ var themesIndices = Object.keys(themes);
 Object.keys(glyphs).forEach((k) => { 
     var theme = themes[themesIndices[0]]; themesIndices.push(themesIndices.shift());
 %>
-.letterimages[data-name^="<%= k.toLowerCase() %>"], .letterimages[data-name^="<%= k.toUpperCase() %>"] {
+.letterimages[data-name^="<%= k %>" i] {
     background-color: <%= theme[0] %>;
 }
 
-.letterimages[data-name^="<%= k.toLowerCase() %>"]:before, .letterimages[data-name^="<%= k.toUpperCase() %>"]:before {
+.letterimages[data-name^="<%= k %>" i]:before {
     content: '\<%= glyphs[k].unicodes[0].charCodeAt(0).toString(16) %>';
     color: <%= theme[1] %>;
 }
 
-.letterimages[data-name^="<%= k.toLowerCase() %>"]:after, .letterimages[data-name^="<%= k.toUpperCase() %>"]:after {
+.letterimages[data-name^="<%= k %>" i]:after {
     content: '\<%= glyphs[k].unicodes[1].charCodeAt(0).toString(16) %>';
     color: <%= theme[2] %>;
 }
