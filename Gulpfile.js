@@ -4,18 +4,13 @@
 
 const cheerio = require('cheerio');
 const cssmin = require('gulp-cssmin');
-const es = require('event-stream');
 const gulp = require('gulp');
-const jscs = require('gulp-jscs');
-const jshint = require('gulp-jshint');
-const lodash = require('lodash');
+const iconfont = require('gulp-iconfont');
 const material = require('material-colors');
 const path = require('path');
-const reduce = require('stream-reduce');
 const rename = require('gulp-rename');
-const svgo = require('gulp-svgo');
 const template = require('gulp-template');
-const uglify = require('gulp-uglify');
+const through2 = require('through2');
 
 const demoData = {
     names: [
@@ -24,57 +19,51 @@ const demoData = {
         'Ivan Petrovich Sidorov', 'Sven Svensson', 'Zhang San',
         'Anna Malli', 'Rajwinder Kaur',]
 };
-let templateData = { svgs: {}, colors: material };
 
-gulp.task('templateData', () =>
+let templateData = { glyphs: {}, colors: material };
+
+gulp.task('font', () =>
     gulp.src('svg/*.svg')
-        .pipe(svgo())
-        .pipe(reduce((d, file) => {
-            const k = path.basename(file.path, '.svg');
-            const v = file.contents;
-            d.svgs[k] = v;
-            return d;
-        }, templateData))
-        .on('data', (d) => templateData = d)
+        .pipe(through2.obj(function (file, enc, done) {
+            const extname = path.extname(file.path);
+            const basename = path.basename(file.path, extname);
+            const dirname = path.dirname(file.path);
+            ['color2', 'color3'].forEach((c, i) => {
+                let $ = cheerio.load(file.contents);
+                $('path').remove(':not(.' + c + ')');
+                let f = file.clone();
+                f.contents = Buffer.from($.xml());
+                f.path = path.join(dirname, basename + i + extname);
+                this.push(f);
+            });
+            templateData.glyphs[basename] = {};
+            done();
+        }))
+        .pipe(iconfont({
+            fontName: 'letterimages',
+            prependUnicode: false,
+            formats: ['woff', 'svg'],
+            timestamp: Math.round(Date.now() / 1000)
+        }))
+        .on('glyphs', (glyphs) =>
+            Object.keys(templateData.glyphs).forEach((k) =>
+                templateData.glyphs[k].unicodes = [0, 1].map((i) =>
+                    glyphs.find((glyph) => glyph.name === k + i).unicode[0])))
+        .pipe(gulp.dest('dist/fonts/'))
 );
 
-gulp.task('letterimages.js', ['templateData'], () =>
-    gulp.src('letterimages.js.tmpl')
-        .pipe(template(templateData))
-        .pipe(jscs())
-        .pipe(jscs.reporter())
-        .pipe(jshint())
-        .pipe(jshint.reporter())
-        .pipe(rename('letterimages.js'))
-        .pipe(gulp.dest('dist'))
-);
-
-gulp.task('letterimages.min.js', ['letterimages.js'], () =>
-    gulp.src('dist/letterimages.js')
-        .pipe(uglify())
-        .pipe(rename('letterimages.min.js'))
-        .pipe(gulp.dest('dist'))
-);
-
-gulp.task('letterimages.css', ['templateData'], () =>
+gulp.task('letterimages.css', ['font'], () =>
     gulp.src('letterimages.css.tmpl')
-        .pipe(template(templateData, { imports: { _: lodash, cheerio: cheerio } }))
+        .pipe(template(templateData))
         .pipe(rename('letterimages.css'))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('dist/css/'))
 );
 
 gulp.task('letterimages.min.css', ['letterimages.css'], () =>
-    gulp.src('dist/letterimages.css')
+    gulp.src('dist/css/letterimages.css')
         .pipe(cssmin())
         .pipe(rename('letterimages.min.css'))
-        .pipe(gulp.dest('dist'))
-);
-
-gulp.task('demo.html', ['letterimages.min.js'], () =>
-    gulp.src('demo.html.tmpl')
-        .pipe(template(demoData))
-        .pipe(rename('demo.html'))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('dist/css/'))
 );
 
 gulp.task('demo-css.html', ['letterimages.min.css'], () =>
@@ -84,7 +73,4 @@ gulp.task('demo-css.html', ['letterimages.min.css'], () =>
         .pipe(gulp.dest('dist'))
 );
 
-gulp.task('default', [
-    'letterimages.js', 'letterimages.min.js',
-    'letterimages.css', 'letterimages.min.css',
-    'demo.html', 'demo-css.html']);
+gulp.task('default', ['letterimages.css', 'letterimages.min.css', 'demo-css.html']);

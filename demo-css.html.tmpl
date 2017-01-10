@@ -7,7 +7,7 @@
     <title>letterimages - Demo Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    <link href="letterimages.min.css" rel="stylesheet">
+    <link href="css/letterimages.min.css" rel="stylesheet">
 
     <style>
         .customization-sample {
@@ -39,7 +39,7 @@
         <% names.forEach((name) => { %>
         <div class="media">
             <div class="media-left">
-                <img class="media-object letterimages-profile letterimages-rounded" data-name="<%= name %>">
+                <i class="media-object letterimages letterimages-rounded" data-name="<%= name %>"></i>
             </div>
             <div class="media-body">
                 <h4 class="media-heading"><%= name %></h4>
@@ -56,7 +56,7 @@
         <% names.forEach((name) => { %>
         <div class="media">
             <div class="media-left">
-                <img class="media-object letterimages-profile letterimages-circle" data-name="<%= name %>">
+                <i class="media-object letterimages letterimages-circle" data-name="<%= name %>"></i>
             </div>
             <div class="media-body">
                 <h4 class="media-heading"><%= name %></h4>
@@ -74,7 +74,7 @@
         <pre>
 &lt;div class="media"&gt;
     &lt;div class="media-left"&gt;
-        &lt;img class="media-object <strong><span class="bg-success">letterimages-profile letterimages-rounded</span></strong>" <strong><span class="bg-success">data-name="John Doe"</span></strong>&gt;
+        &lt;i class="media-object <strong><span class="bg-success">letterimages letterimages-rounded</span></strong>" <strong><span class="bg-success">data-name="John Doe"</span></strong>&gt;&lt;/i&gt;
     &lt;/div&gt;
     &lt;div class="media-body"&gt;
         &lt;h4 class="media-heading"&gt;John Doe&lt;/h4&gt;
@@ -88,7 +88,7 @@
 
         <% [128, 72, 64, 48, 32].forEach((r) => { %>
         <div class="customization-sample">
-            <img class="letterimages-profile letterimages-rounded letterimages-<%= r %>" data-name="Albert Einstein">
+            <i class="letterimages letterimages-rounded letterimages-<%= r %>" data-name="Albert Einstein"></i>
             <code>letterimages-<%= r %></code>
         </div>
         <% }); %>
@@ -99,8 +99,18 @@
 
         <% ['teal', 'blue', 'purple', 'orange', 'grey'].forEach((theme) => { %>
         <div class="customization-sample">
-            <img class="letterimages-profile letterimages-rounded letterimages-<%= theme %>" data-name="Niels Bohr">
+            <i class="letterimages letterimages-rounded letterimages-<%= theme %>" data-name="Niels Bohr"></i>
             <code>letterimages-<%= theme %></code>
+        </div>
+        <% }); %>
+
+        <hr />
+
+        <h2>All Glyphs</h2>
+
+        <% 'abcdefghijklmnopqrstuvwxyz'.split('').forEach((letter) => { %>
+        <div class="customization-sample">
+            <i class="letterimages letterimages-rounded" data-name="<%= letter %>"></i>
         </div>
         <% }); %>
 
