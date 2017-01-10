@@ -80,366 +80,366 @@
 
 
 
-.letterimages[data-name^="a"], .letterimages[data-name^="A"] {
+.letterimages[data-name^="a" i] {
     background-color: #00796b;
 }
 
-.letterimages[data-name^="a"]:before, .letterimages[data-name^="A"]:before {
+.letterimages[data-name^="a" i]:before {
     content: '\ea01';
     color: #009688;
 }
 
-.letterimages[data-name^="a"]:after, .letterimages[data-name^="A"]:after {
+.letterimages[data-name^="a" i]:after {
     content: '\ea02';
     color: #a5d6a7;
 }
 
-.letterimages[data-name^="b"], .letterimages[data-name^="B"] {
+.letterimages[data-name^="b" i] {
     background-color: #1565c0;
 }
 
-.letterimages[data-name^="b"]:before, .letterimages[data-name^="B"]:before {
+.letterimages[data-name^="b" i]:before {
     content: '\ea03';
     color: #1e88e5;
 }
 
-.letterimages[data-name^="b"]:after, .letterimages[data-name^="B"]:after {
+.letterimages[data-name^="b" i]:after {
     content: '\ea04';
     color: #81d4fa;
 }
 
-.letterimages[data-name^="c"], .letterimages[data-name^="C"] {
+.letterimages[data-name^="c" i] {
     background-color: #673ab7;
 }
 
-.letterimages[data-name^="c"]:before, .letterimages[data-name^="C"]:before {
+.letterimages[data-name^="c" i]:before {
     content: '\ea05';
     color: #9575cd;
 }
 
-.letterimages[data-name^="c"]:after, .letterimages[data-name^="C"]:after {
+.letterimages[data-name^="c" i]:after {
     content: '\ea06';
     color: #ce93d8;
 }
 
-.letterimages[data-name^="d"], .letterimages[data-name^="D"] {
+.letterimages[data-name^="d" i] {
     background-color: #ef6c00;
 }
 
-.letterimages[data-name^="d"]:before, .letterimages[data-name^="D"]:before {
+.letterimages[data-name^="d" i]:before {
     content: '\ea07';
     color: #ffa726;
 }
 
-.letterimages[data-name^="d"]:after, .letterimages[data-name^="D"]:after {
+.letterimages[data-name^="d" i]:after {
     content: '\ea08';
     color: #fff59d;
 }
 
-.letterimages[data-name^="e"], .letterimages[data-name^="E"] {
+.letterimages[data-name^="e" i] {
     background-color: #78909c;
 }
 
-.letterimages[data-name^="e"]:before, .letterimages[data-name^="E"]:before {
+.letterimages[data-name^="e" i]:before {
     content: '\ea09';
     color: #b0bec5;
 }
 
-.letterimages[data-name^="e"]:after, .letterimages[data-name^="E"]:after {
+.letterimages[data-name^="e" i]:after {
     content: '\ea0a';
     color: #e3f2fd;
 }
 
-.letterimages[data-name^="f"], .letterimages[data-name^="F"] {
+.letterimages[data-name^="f" i] {
     background-color: #00796b;
 }
 
-.letterimages[data-name^="f"]:before, .letterimages[data-name^="F"]:before {
+.letterimages[data-name^="f" i]:before {
     content: '\ea0b';
     color: #009688;
 }
 
-.letterimages[data-name^="f"]:after, .letterimages[data-name^="F"]:after {
+.letterimages[data-name^="f" i]:after {
     content: '\ea0c';
     color: #a5d6a7;
 }
 
-.letterimages[data-name^="g"], .letterimages[data-name^="G"] {
+.letterimages[data-name^="g" i] {
     background-color: #1565c0;
 }
 
-.letterimages[data-name^="g"]:before, .letterimages[data-name^="G"]:before {
+.letterimages[data-name^="g" i]:before {
     content: '\ea0d';
     color: #1e88e5;
 }
 
-.letterimages[data-name^="g"]:after, .letterimages[data-name^="G"]:after {
+.letterimages[data-name^="g" i]:after {
     content: '\ea0e';
     color: #81d4fa;
 }
 
-.letterimages[data-name^="h"], .letterimages[data-name^="H"] {
+.letterimages[data-name^="h" i] {
     background-color: #673ab7;
 }
 
-.letterimages[data-name^="h"]:before, .letterimages[data-name^="H"]:before {
+.letterimages[data-name^="h" i]:before {
     content: '\ea0f';
     color: #9575cd;
 }
 
-.letterimages[data-name^="h"]:after, .letterimages[data-name^="H"]:after {
+.letterimages[data-name^="h" i]:after {
     content: '\ea10';
     color: #ce93d8;
 }
 
-.letterimages[data-name^="i"], .letterimages[data-name^="I"] {
+.letterimages[data-name^="i" i] {
     background-color: #ef6c00;
 }
 
-.letterimages[data-name^="i"]:before, .letterimages[data-name^="I"]:before {
+.letterimages[data-name^="i" i]:before {
     content: '\ea11';
     color: #ffa726;
 }
 
-.letterimages[data-name^="i"]:after, .letterimages[data-name^="I"]:after {
+.letterimages[data-name^="i" i]:after {
     content: '\ea12';
     color: #fff59d;
 }
 
-.letterimages[data-name^="j"], .letterimages[data-name^="J"] {
+.letterimages[data-name^="j" i] {
     background-color: #78909c;
 }
 
-.letterimages[data-name^="j"]:before, .letterimages[data-name^="J"]:before {
+.letterimages[data-name^="j" i]:before {
     content: '\ea13';
     color: #b0bec5;
 }
 
-.letterimages[data-name^="j"]:after, .letterimages[data-name^="J"]:after {
+.letterimages[data-name^="j" i]:after {
     content: '\ea14';
     color: #e3f2fd;
 }
 
-.letterimages[data-name^="k"], .letterimages[data-name^="K"] {
+.letterimages[data-name^="k" i] {
     background-color: #00796b;
 }
 
-.letterimages[data-name^="k"]:before, .letterimages[data-name^="K"]:before {
+.letterimages[data-name^="k" i]:before {
     content: '\ea15';
     color: #009688;
 }
 
-.letterimages[data-name^="k"]:after, .letterimages[data-name^="K"]:after {
+.letterimages[data-name^="k" i]:after {
     content: '\ea16';
     color: #a5d6a7;
 }
 
-.letterimages[data-name^="l"], .letterimages[data-name^="L"] {
+.letterimages[data-name^="l" i] {
     background-color: #1565c0;
 }
 
-.letterimages[data-name^="l"]:before, .letterimages[data-name^="L"]:before {
+.letterimages[data-name^="l" i]:before {
     content: '\ea17';
     color: #1e88e5;
 }
 
-.letterimages[data-name^="l"]:after, .letterimages[data-name^="L"]:after {
+.letterimages[data-name^="l" i]:after {
     content: '\ea18';
     color: #81d4fa;
 }
 
-.letterimages[data-name^="m"], .letterimages[data-name^="M"] {
+.letterimages[data-name^="m" i] {
     background-color: #673ab7;
 }
 
-.letterimages[data-name^="m"]:before, .letterimages[data-name^="M"]:before {
+.letterimages[data-name^="m" i]:before {
     content: '\ea19';
     color: #9575cd;
 }
 
-.letterimages[data-name^="m"]:after, .letterimages[data-name^="M"]:after {
+.letterimages[data-name^="m" i]:after {
     content: '\ea1a';
     color: #ce93d8;
 }
 
-.letterimages[data-name^="n"], .letterimages[data-name^="N"] {
+.letterimages[data-name^="n" i] {
     background-color: #ef6c00;
 }
 
-.letterimages[data-name^="n"]:before, .letterimages[data-name^="N"]:before {
+.letterimages[data-name^="n" i]:before {
     content: '\ea1b';
     color: #ffa726;
 }
 
-.letterimages[data-name^="n"]:after, .letterimages[data-name^="N"]:after {
+.letterimages[data-name^="n" i]:after {
     content: '\ea1c';
     color: #fff59d;
 }
 
-.letterimages[data-name^="o"], .letterimages[data-name^="O"] {
+.letterimages[data-name^="o" i] {
     background-color: #78909c;
 }
 
-.letterimages[data-name^="o"]:before, .letterimages[data-name^="O"]:before {
+.letterimages[data-name^="o" i]:before {
     content: '\ea1d';
     color: #b0bec5;
 }
 
-.letterimages[data-name^="o"]:after, .letterimages[data-name^="O"]:after {
+.letterimages[data-name^="o" i]:after {
     content: '\ea1e';
     color: #e3f2fd;
 }
 
-.letterimages[data-name^="p"], .letterimages[data-name^="P"] {
+.letterimages[data-name^="p" i] {
     background-color: #00796b;
 }
 
-.letterimages[data-name^="p"]:before, .letterimages[data-name^="P"]:before {
+.letterimages[data-name^="p" i]:before {
     content: '\ea1f';
     color: #009688;
 }
 
-.letterimages[data-name^="p"]:after, .letterimages[data-name^="P"]:after {
+.letterimages[data-name^="p" i]:after {
     content: '\ea20';
     color: #a5d6a7;
 }
 
-.letterimages[data-name^="q"], .letterimages[data-name^="Q"] {
+.letterimages[data-name^="q" i] {
     background-color: #1565c0;
 }
 
-.letterimages[data-name^="q"]:before, .letterimages[data-name^="Q"]:before {
+.letterimages[data-name^="q" i]:before {
     content: '\ea21';
     color: #1e88e5;
 }
 
-.letterimages[data-name^="q"]:after, .letterimages[data-name^="Q"]:after {
+.letterimages[data-name^="q" i]:after {
     content: '\ea22';
     color: #81d4fa;
 }
 
-.letterimages[data-name^="r"], .letterimages[data-name^="R"] {
+.letterimages[data-name^="r" i] {
     background-color: #673ab7;
 }
 
-.letterimages[data-name^="r"]:before, .letterimages[data-name^="R"]:before {
+.letterimages[data-name^="r" i]:before {
     content: '\ea23';
     color: #9575cd;
 }
 
-.letterimages[data-name^="r"]:after, .letterimages[data-name^="R"]:after {
+.letterimages[data-name^="r" i]:after {
     content: '\ea24';
     color: #ce93d8;
 }
 
-.letterimages[data-name^="s"], .letterimages[data-name^="S"] {
+.letterimages[data-name^="s" i] {
     background-color: #ef6c00;
 }
 
-.letterimages[data-name^="s"]:before, .letterimages[data-name^="S"]:before {
+.letterimages[data-name^="s" i]:before {
     content: '\ea25';
     color: #ffa726;
 }
 
-.letterimages[data-name^="s"]:after, .letterimages[data-name^="S"]:after {
+.letterimages[data-name^="s" i]:after {
     content: '\ea26';
     color: #fff59d;
 }
 
-.letterimages[data-name^="t"], .letterimages[data-name^="T"] {
+.letterimages[data-name^="t" i] {
     background-color: #78909c;
 }
 
-.letterimages[data-name^="t"]:before, .letterimages[data-name^="T"]:before {
+.letterimages[data-name^="t" i]:before {
     content: '\ea27';
     color: #b0bec5;
 }
 
-.letterimages[data-name^="t"]:after, .letterimages[data-name^="T"]:after {
+.letterimages[data-name^="t" i]:after {
     content: '\ea28';
     color: #e3f2fd;
 }
 
-.letterimages[data-name^="u"], .letterimages[data-name^="U"] {
+.letterimages[data-name^="u" i] {
     background-color: #00796b;
 }
 
-.letterimages[data-name^="u"]:before, .letterimages[data-name^="U"]:before {
+.letterimages[data-name^="u" i]:before {
     content: '\ea29';
     color: #009688;
 }
 
-.letterimages[data-name^="u"]:after, .letterimages[data-name^="U"]:after {
+.letterimages[data-name^="u" i]:after {
     content: '\ea2a';
     color: #a5d6a7;
 }
 
-.letterimages[data-name^="v"], .letterimages[data-name^="V"] {
+.letterimages[data-name^="v" i] {
     background-color: #1565c0;
 }
 
-.letterimages[data-name^="v"]:before, .letterimages[data-name^="V"]:before {
+.letterimages[data-name^="v" i]:before {
     content: '\ea2b';
     color: #1e88e5;
 }
 
-.letterimages[data-name^="v"]:after, .letterimages[data-name^="V"]:after {
+.letterimages[data-name^="v" i]:after {
     content: '\ea2c';
     color: #81d4fa;
 }
 
-.letterimages[data-name^="w"], .letterimages[data-name^="W"] {
+.letterimages[data-name^="w" i] {
     background-color: #673ab7;
 }
 
-.letterimages[data-name^="w"]:before, .letterimages[data-name^="W"]:before {
+.letterimages[data-name^="w" i]:before {
     content: '\ea2d';
     color: #9575cd;
 }
 
-.letterimages[data-name^="w"]:after, .letterimages[data-name^="W"]:after {
+.letterimages[data-name^="w" i]:after {
     content: '\ea2e';
     color: #ce93d8;
 }
 
-.letterimages[data-name^="x"], .letterimages[data-name^="X"] {
+.letterimages[data-name^="x" i] {
     background-color: #ef6c00;
 }
 
-.letterimages[data-name^="x"]:before, .letterimages[data-name^="X"]:before {
+.letterimages[data-name^="x" i]:before {
     content: '\ea2f';
     color: #ffa726;
 }
 
-.letterimages[data-name^="x"]:after, .letterimages[data-name^="X"]:after {
+.letterimages[data-name^="x" i]:after {
     content: '\ea30';
     color: #fff59d;
 }
 
-.letterimages[data-name^="y"], .letterimages[data-name^="Y"] {
+.letterimages[data-name^="y" i] {
     background-color: #78909c;
 }
 
-.letterimages[data-name^="y"]:before, .letterimages[data-name^="Y"]:before {
+.letterimages[data-name^="y" i]:before {
     content: '\ea31';
     color: #b0bec5;
 }
 
-.letterimages[data-name^="y"]:after, .letterimages[data-name^="Y"]:after {
+.letterimages[data-name^="y" i]:after {
     content: '\ea32';
     color: #e3f2fd;
 }
 
-.letterimages[data-name^="z"], .letterimages[data-name^="Z"] {
+.letterimages[data-name^="z" i] {
     background-color: #00796b;
 }
 
-.letterimages[data-name^="z"]:before, .letterimages[data-name^="Z"]:before {
+.letterimages[data-name^="z" i]:before {
     content: '\ea33';
     color: #009688;
 }
 
-.letterimages[data-name^="z"]:after, .letterimages[data-name^="Z"]:after {
+.letterimages[data-name^="z" i]:after {
     content: '\ea34';
     color: #a5d6a7;
 }
