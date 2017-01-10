@@ -2,7 +2,7 @@
   "name": "letterimages",
   "version": "1.1.0",
   "description": "",
-  "main": "dist/letterimages.js",
+  "main": "dist/js/letterimages.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danieljoos/letterimages.git"
@@ -20,6 +20,7 @@
     "gulp-iconfont": "^8.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-template": "^4.0.0",
+    "gulp-uglify": "^2.0.0",
     "material-colors": "^1.2.5",
     "through2": "^2.0.3"
   }

@@ -11,6 +11,7 @@ const path = require('path');
 const rename = require('gulp-rename');
 const template = require('gulp-template');
 const through2 = require('through2');
+const uglify = require('gulp-uglify');
 
 const demoData = {
     names: [
@@ -73,4 +74,26 @@ gulp.task('demo-css.html', ['letterimages.min.css'], () =>
         .pipe(gulp.dest('dist'))
 );
 
-gulp.task('default', ['letterimages.css', 'letterimages.min.css', 'demo-css.html']);
+gulp.task('letterimages.js', () => 
+    gulp.src('letterimages.js')
+        .pipe(gulp.dest('dist/js/'))
+);
+
+gulp.task('letterimages.min.js', ['letterimages.js'], () =>
+    gulp.src('dist/js/letterimages.js')
+        .pipe(uglify())
+        .pipe(rename('letterimages.min.js'))
+        .pipe(gulp.dest('dist/js/'))
+);
+
+gulp.task('demo-js.html', ['letterimages.min.js', 'letterimages.min.css'], () =>
+    gulp.src('demo-js.html.tmpl')
+        .pipe(template(demoData))
+        .pipe(rename('demo-js.html'))
+        .pipe(gulp.dest('dist'))
+);
+
+gulp.task('default', [
+    'letterimages.css', 'letterimages.min.css', 'demo-css.html',
+    'letterimages.js', 'letterimages.min.js', 'demo-js.html'
+]);

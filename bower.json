@@ -1,7 +1,7 @@
 {
   "name": "letterimages",
   "description": "Generate profile images, e.g. for profiles without photo",
-  "main": "dist/letterimages.js",
+  "main": "dist/js/letterimages.js",
   "authors": [
     "Daniel Joos"
   ],
