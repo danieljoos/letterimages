@@ -1,4 +1,4 @@
-# letterimages [![npm version](https://badge.fury.io/js/letterimages.svg)](https://badge.fury.io/js/letterimages)
+# letterimages [![npm version](https://badge.fury.io/js/letterimages.svg)](https://badge.fury.io/js/letterimages) [![Bower version](https://badge.fury.io/bo/letterimages.svg)](https://badge.fury.io/bo/letterimages)
 
 Use CSS and webfonts to generate profile images, e.g. for profiles without photo.
 
