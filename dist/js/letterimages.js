@@ -30,6 +30,9 @@
 
     LetterImages.prototype.resolveTheme = function (element) {
         element = $(element);
+        if (!themes.reduce(function (ret, theme) {
+            return ret && !element.hasClass('letterimages-' + theme);
+        }, true)) { return; }
         var config = $.extend({ name: '?' }, element.data());
         var theme = this.options.themeResolver(config.name, themes);
         element.addClass('letterimages-' + theme);
