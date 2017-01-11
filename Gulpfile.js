@@ -44,7 +44,8 @@ gulp.task('font', () =>
             fontName: 'letterimages',
             prependUnicode: false,
             formats: ['woff', 'svg'],
-            timestamp: Math.round(Date.now() / 1000)
+            timestamp: Math.round(Date.now() / 1000),
+            metadata: 'Copyright (c) 2017 Daniel Joos - Distributed under MIT license.'
         }))
         .on('glyphs', (glyphs) =>
             Object.keys(templateData.glyphs).forEach((k) =>
