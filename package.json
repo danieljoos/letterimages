@@ -1,27 +1,28 @@
 {
   "name": "letterimages",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "",
-  "main": "dist/js/letterimages.js",
+  "main": "letterimages.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danieljoos/letterimages.git"
   },
   "author": "Daniel Joos",
-  "license": "MIT",
+  "license": "CC0-1.0",
   "bugs": {
     "url": "https://github.com/danieljoos/letterimages/issues"
   },
   "homepage": "https://github.com/danieljoos/letterimages#readme",
+  "scripts": {
+    "build": "gulp"
+  },
   "devDependencies": {
     "cheerio": "^0.22.0",
-    "gulp": "^3.9.1",
-    "gulp-cssmin": "^0.1.7",
-    "gulp-iconfont": "^8.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-template": "^4.0.0",
-    "gulp-uglify": "^2.0.0",
-    "material-colors": "^1.2.5",
-    "through2": "^2.0.3"
+    "gulp": "^4.0.2",
+    "gulp-iconfont": "^10.0.3",
+    "gulp-rename": "^1.4.0",
+    "gulp-template": "^5.0.0",
+    "material-colors": "^1.2.6",
+    "through2": "^3.0.1"
   }
 }
