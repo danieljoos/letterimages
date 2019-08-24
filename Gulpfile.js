@@ -62,4 +62,4 @@ function js() {
 exports.font = font;
 exports.css = gulp.series(font, css);
 exports.js = js;
-exports.default = gulp.series(css, js);
+exports.default = gulp.series(exports.css, exports.js);
