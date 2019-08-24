@@ -1,59 +1,81 @@
-# letterimages [![npm version](https://badge.fury.io/js/letterimages.svg)](https://badge.fury.io/js/letterimages) [![Bower version](https://badge.fury.io/bo/letterimages.svg)](https://badge.fury.io/bo/letterimages)
+# letterimages [![npm version](https://badge.fury.io/js/letterimages.svg)](https://badge.fury.io/js/letterimages)
 
-Use CSS and webfonts to generate profile images, e.g. for profiles without photo.
+Use CSS and webfonts as fallback profile images, e.g. for profiles without photo.
 
-An optional jQuery plugin can be used for more versatile color theme usage:
-This results in names starting with the same letter more likely to become differently colored profile images.
+The optional Javascript module can be used for more versatile color theme usage.
 
-Have a look at the [Demo page (CSS-only)](https://danieljoos.github.io/letterimages/dist/demo-css.html) 
-and the [Demo page (with jQuery Plugin)](https://danieljoos.github.io/letterimages/dist/demo-js.html) to see it in action.
+## Usage
 
-It is very similar to [initial.js](http://judelicio.us/initial.js/) and heavily inspired by
-the _Contacts_ app of [OxygenOS 4.0](https://oneplus.net/oxygenos).
+The stylesheet and webfont assets can be found in the `dist` directory.
 
-## Usage (CSS-only)
-
-Copy the `dist/css` and `dist/fonts` directories to your assets location.
-Include the stylesheet as usual, using a `link` tag:
+Include the stylesheet as usual:
 ```html
     <link href="/path/to/letterimages.css" rel="stylesheet">
 ```
 
-Simply add a tag with the desired name as `data-name` attribute.
-In addition, add the CSS class `letterimages`:
+Now, add a tag with the desired name in the `data-name` attribute.
+Add the class `letterimages` to the element:
 ```html
     <i data-name="John Doe" class="letterimages"></i>
 ```
 
-The stylesheet uses some default coloring for each letter.
-Customize the style using utility classes as shown on the [Demo page (CSS-only)](https://danieljoos.github.io/letterimages/dist/demo-css.html)
+### Themes
 
-## Usage (jQuery Plugin)
+The stylesheet defines some default coloring for each letter.
+However the theme of a letterimages-element can be overridden by setting one of the available theme classes:
 
-Use the _letterimages_ jQuery plugin in addition to the CSS.
+* `letterimages-teal`
+* `letterimages-blue`
+* `letterimages-purple`
+* `letterimages-orange`
+* `letterimages-grey`
 
-```js
-    $('.letterimages').letterimages();
+### Shapes & Sizes
+
+The size of letterimages elements can be set by the `font-size` CSS attribute.
+
+The stylesheet defines a set of size helper-classes:
+
+* `letterimages-32`
+* `letterimages-48`
+* `letterimages-64`
+* `letterimages-96`
+* `letterimages-128`
+
+Custom sizes can be specified by setting the `font-size` to the desired value:
+
+```css
+.letterimages-custom {
+    font-size: 256px;
+    width: 256px;
+    height: 256px;
+}
 ```
 
-### Override theme resolution
+All letterimages icons have a square base, but can also be used as rounded or circular icons.
+The stylesheet defines the following shape helper-classes:
 
-```js
-$('.letterimages').letterimages({
-    themeResolver: function(name, themes) {
-        return themes[name.length % themes.length];  // Use your own logic here
-    }
-});
+* `letterimages-rounded`
+* `letterimages-circle`
+
+### Javascript Module
+
+Optionally, the included Javascript can be used such that names starting with the same letter are more likely to become differently colored:
+```html
+<script type="module">
+    import letterimages from '/path/to/letterimages.js';
+    letterimages();
+</script>
 ```
 
 ## Installation
 
-Using npm:
 ```
 npm install letterimages
 ```
 
-Using bower:
-```
-bower install letterimages
-```
+## License
+
+Creative Commons Zero v1.0 Universal
+
+See file `LICENSE`.
