@@ -4,6 +4,8 @@ Use CSS and webfonts as fallback profile images, e.g. for profiles without photo
 
 The optional Javascript module can be used for more versatile color theme usage.
 
+![letterimages glyphs](preview.png)
+
 ## Usage
 
 The stylesheet and webfont assets can be found in the `dist` directory.
