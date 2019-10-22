@@ -1,7 +1,7 @@
 {
   "name": "letterimages",
   "version": "2.0.1",
-  "description": "",
+  "description": "Fallback Profile Images",
   "main": "letterimages.js",
   "repository": {
     "type": "git",

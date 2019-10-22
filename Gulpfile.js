@@ -1,5 +1,5 @@
 /*
- * Letter Images - Generated Profile Images
+ * Letter Images - Fallback Profile Images
  * https://github.com/danieljoos/letterimages
  */
 
@@ -38,7 +38,9 @@ function font() {
             prependUnicode: false,
             formats: ['woff', 'svg'],
             timestamp: Math.round(Date.now() / 1000),
-            metadata: 'https://github.com/danieljoos/letterimages'
+            metadata: 'https://github.com/danieljoos/letterimages',
+            fontHeight: 1000,
+            normalize: true,
         }))
         .on('glyphs', (glyphs) =>
             Object.keys(templateData.glyphs).forEach((k) =>
