@@ -2,3 +2,4 @@ js/
 templates/
 svg/
 Gulpfile.js
+yarn.lock

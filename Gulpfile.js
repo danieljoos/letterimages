@@ -10,6 +10,7 @@ const gulp = require('gulp');
 const iconfont = require('gulp-iconfont');
 const material = require('material-colors');
 const path = require('path');
+const puppeteer = require('puppeteer');
 const rename = require('gulp-rename');
 const template = require('gulp-template');
 const through2 = require('through2');
@@ -61,7 +62,29 @@ function js() {
         .pipe(gulp.dest('dist/'));
 }
 
+function demo() {
+    const demoData = { names: [] };
+    for (let i = 'a'.charCodeAt(0); i < 'z'.charCodeAt(0); ++i) {
+        demoData.names.push(String.fromCharCode(i));
+    }
+    return gulp.src('templates/demo.html.tmpl')
+        .pipe(template(demoData))
+        .pipe(rename('demo.html'))
+        .pipe(gulp.dest('.'));
+}
+
+async function preview() {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto(`file:///${__dirname}/demo.html`);
+    const previewArea = await page.$('#preview');
+    await previewArea.screenshot({ path: 'preview.png', omitBackground: true });
+    await browser.close();
+}
+
 exports.font = font;
 exports.css = gulp.series(font, css);
 exports.js = js;
-exports.default = gulp.series(exports.css, exports.js);
+exports.demo = demo;
+exports.preview = gulp.series(demo, preview);
+exports.default = gulp.series(exports.css, exports.js, exports.preview);

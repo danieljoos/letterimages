@@ -17,12 +17,13 @@
     "build": "gulp"
   },
   "devDependencies": {
-    "cheerio": "^0.22.0",
+    "cheerio": "^1.0.0-rc.3",
     "gulp": "^4.0.2",
     "gulp-iconfont": "^10.0.3",
     "gulp-rename": "^1.4.0",
     "gulp-template": "^5.0.0",
     "material-colors": "^1.2.6",
+    "puppeteer": "^1.20.0",
     "through2": "^3.0.1"
   }
 }
