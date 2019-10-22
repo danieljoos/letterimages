@@ -12,13 +12,13 @@ The stylesheet and webfont assets can be found in the `dist` directory.
 
 Include the stylesheet as usual:
 ```html
-    <link href="/path/to/letterimages.css" rel="stylesheet">
+<link href="/path/to/letterimages.css" rel="stylesheet">
 ```
 
 Now, add a tag with the desired name in the `data-name` attribute.
 Add the class `letterimages` to the element:
 ```html
-    <i data-name="John Doe" class="letterimages"></i>
+<i data-name="John Doe" class="letterimages"></i>
 ```
 
 ### Themes
