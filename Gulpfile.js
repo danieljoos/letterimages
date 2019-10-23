@@ -64,7 +64,7 @@ function js() {
 
 function demo() {
     const demoData = { names: [] };
-    for (let i = 'a'.charCodeAt(0); i < 'z'.charCodeAt(0); ++i) {
+    for (let i = 'a'.charCodeAt(0); i <= 'z'.charCodeAt(0); ++i) {
         demoData.names.push(String.fromCharCode(i));
     }
     return gulp.src('templates/demo.html.tmpl')
